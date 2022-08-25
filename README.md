@@ -1,6 +1,4 @@
-CS50 Final Project
-
-END CREDITS
+Spotify Collaboration Search
 
 Collaborators: Aaron Bradford, Matt Sakiyama
 
