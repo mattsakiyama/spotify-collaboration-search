@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search 
+{% endblock %}
+
+{% block main %}
+    <!-- Displays instructions and a search field for the user -->
+    <h1>Search for some artists!!</h1>
+    <form action="/search" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus="" class="form-control mx-auto w-auto" style="width: 200px;" name="artists" placeholder="Enter an artists or artists!" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit" name="search">Search</button>
+    </form>
+{% endblock %}

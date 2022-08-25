@@ -1,0 +1,63 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Style for body of each page */
+
+body
+{
+    background-color: #191414;
+    background-image: url("https://www.howtogeek.com/wp-content/uploads/2018/08/shutterstock_407554567.jpg?width=1198&trim=1,1&bg-color=000&pad=1")
+}
+
+/* Colors for different texts */
+h1
+{
+    color: #1D8954;
+}
+
+h3
+{
+    color: white;
+}
+
+a {
+    color: gray;
+}
+
+/* Alignment of elements */
+.column {
+    float: left;
+    text-align: center;
+}
+
+.row:after {
+    content: "";
+    display:table;
+    clear: both;
+    padding: 10px;
+}
+
+/* More specific colors */
+nav .navbar-brand .green
+{
+    color: #1D8954;
+}
+
+/* Table formatting */
+th.name {
+    color: #1D8954;
+    width: 70%;
+}
+
+th.secondary {
+    color: #1D8954;
+    width: 30%;
+}
+
+table, th, td {
+    border : 0px;
+    color: #1D8954;
+}

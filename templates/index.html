@@ -1,0 +1,59 @@
+<!-- Main page of the site -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid songs">
+        <!-- Checks if there is song data to display and if so, displays the song and its popularity or if not, presents the search bar -->
+        <!-- Since singles are presented as albums, if an artist has no songs they will have no albums -->
+        {% if songs %}
+        <h1>Songs</h1>
+        <table style = "width:100%">
+            <tr>
+                <th class = "name">Name</th>
+                <th class = "secondary">Popularity (0-100)</th>
+                </tr>
+            {% for song in songs %}
+            <tr>
+                <td><h3 class = "center">{{song}}</h3>
+                <td><h3 class = "center">{{popularity_list[loop.index-1]}}</h3>
+            </tr>
+            {% endfor %}
+        </table>
+            <a href="/songs"><h5 class="center">See More</h5></a>
+        {% else %}
+        <h1>Search for some artists!!</h1>
+        <form action="/search" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus="" class="form-control mx-auto w-auto" style="width: 200px;" name="artists" placeholder="Enter artists or songs!" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit" name="search">Search</button>
+        </form>
+        {% endif %}
+    </div>
+        <br>
+    <div class="container-fluid albums">
+        <!-- Checks if there is album data to display and if so, displays the album and its release date or if not, presents the search bar -->
+        {% if albums %}
+        <h1>Albums</h1>
+        <table style="width:100%">
+            <tr>
+                <th class = "name">Name</th>
+                <th class = "secondary">Release Date</th>
+            </tr>
+            {% set count = 0 %}
+            {% for album in albums %}
+            <tr>
+                <td><h3 class = "center">{{album}}</h3>
+                <td><h3 class = "center">{{release_dates[loop.index-1]}}</h3>
+                </tr>
+            {% endfor %}
+        </table>
+            <a href="/albums"><h5 class="center">See More</h5></a>
+        {% endif %}
+    </div>
+{% endblock %}

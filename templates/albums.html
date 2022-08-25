@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Albums
+{% endblock %}
+
+{% block main %}
+    <div clas="container-fluid">
+        <!-- Checks if there is album data to display and if so, displays the album and its release date or if not, displays text encouraging the user to search for artists -->
+        {% if albums %}
+        <h1>Albums</h1>
+        <table style="width:100%">
+            <tr>
+                <th class = "name">Name</th>
+                <th class = "secondary">Release Date</th>
+            </tr>
+            {% set count = 0 %}
+            {% for album in albums %}
+            <tr>
+                <td><h3 class = "center">{{album}}</h3>
+                <td><h3 class = "center">{{release_dates[loop.index-1]}}</h3>
+                </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <h1>Search for some artists!!</h1>
+        {% endif %}
+    </div>
+{% endblock %}
